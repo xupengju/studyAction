@@ -15,9 +15,9 @@ public class CodeGenerator {
 
     public static void main(String[] args) {
 
-        String url = "jdbc:mysql://121.5.14.135:3306/one_transaction";
+        String url = "";
         String username = "root";
-        String password = "zxcv&^%$..QO131";
+        String password = "";
         DataSourceConfig.Builder wordsHandler = new DataSourceConfig.Builder(url, username, password)
                 .dbQuery(new MySqlQuery())
                 .schema("mybatis-plus")
