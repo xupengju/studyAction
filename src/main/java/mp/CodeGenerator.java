@@ -12,11 +12,12 @@ import java.util.Collections;
 
 public class CodeGenerator {
 
+
     public static void main(String[] args) {
 
-        String url = "";
+        String url = "jdbc:mysql://121.5.14.135:3306/one_transaction";
         String username = "root";
-        String password = "";
+        String password = "zxcv&^%$..QO131";
         DataSourceConfig.Builder wordsHandler = new DataSourceConfig.Builder(url, username, password)
                 .dbQuery(new MySqlQuery())
                 .schema("mybatis-plus")
@@ -36,8 +37,13 @@ public class CodeGenerator {
                                     .pathInfo(Collections.singletonMap(OutputFile.xml, "/Users/xpj/workSpace/studyAction/src/main/java/mp/mapper")); // 设置mapperXml生成路径
                          })
                          .strategyConfig(builder -> {
-                             builder.addInclude("sub_order_info")
-                                    .mapperBuilder().enableBaseResultMap().enableBaseColumnList().enableMapperAnnotation().enableMapperAnnotation().entityBuilder().enableLombok(); // 设置需要生成的表名
+                             builder.addInclude("order_detail_coupon")
+                                    .addInclude("order_detail_goods")
+                                    .addInclude("order_detail_jd")
+                                    .addInclude("order_detail_mini")
+                                    .addInclude("order_info")
+                                    .addInclude("sub_order_info")
+                                    .mapperBuilder().enableBaseResultMap().enableBaseColumnList().enableMapperAnnotation().entityBuilder().enableLombok(); // 设置需要生成的表名
                              //.addTablePrefix("t_", "c_"); // 设置过滤表前缀
                          })
                          .templateEngine(new FreemarkerTemplateEngine()) // 使用Freemarker引擎模板，默认的是Velocity引擎模板
