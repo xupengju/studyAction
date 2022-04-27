@@ -7,6 +7,17 @@
     <groupId>org.example</groupId>
     <artifactId>studyAction</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <one-cloud-common.version>1.0.2-RELEASE</one-cloud-common.version>
+        <one-cloud-common-redis-starter.version>1.0.1-RELEASE</one-cloud-common-redis-starter.version>
+        <one-cloud-common-datasource-starter.version>1.0.0-RELEASE</one-cloud-common-datasource-starter.version>
+        <one-cloud-common-logging-starter.version>1.0.0-RELEASE</one-cloud-common-logging-starter.version>
+        <one-cloud-common-security-starter.version>1.0.0-RELEASE</one-cloud-common-security-starter.version>
+        <one-cloud-common-cos-starter.version>1.0.0-RELEASE</one-cloud-common-cos-starter.version>
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <swagger-models.version>1.5.21</swagger-models.version>
+        <springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -84,15 +95,56 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
             <version>RELEASE</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-test</artifactId>
             <version>RELEASE</version>
-            <scope>compile</scope>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.31</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.37</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox-swagger2.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-models</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>${swagger-models.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox-swagger-ui.version}</version>
         </dependency>
     </dependencies>
 
